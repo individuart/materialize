@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+    name:
+      label: individuart.materialize::lang.backend.label_name
+      required: true
+      type: text
+    title:
+      label: individuart.materialize::lang.backend.label_title
+      required: true
+      type: text
+    description:
+      label: individuart.materialize::lang.backend.label_description
+      required: true
+      type: textarea
+    published:
+      label: individuart.materialize::lang.backend.label_published
+      type: checkbox
