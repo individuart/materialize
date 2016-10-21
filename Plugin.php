@@ -18,7 +18,7 @@ class Plugin extends PluginBase
     {
         return [
             'name'        => 'Materialize',
-            'description' => 'Materialize Plugin for creating HTML modules in Materialized based themes',
+            'description' => 'individuart.materialize::lang.plugin.description',
             'author'      => 'Individuart',
             'icon'        => 'icon-th-large'
         ];
@@ -82,15 +82,22 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
+        //return []; // Remove this line to activate
 
         return [
             'materialize' => [
                 'label'       => 'Materialize',
-                'url'         => Backend::url('individuart/materialize/mycontroller'),
-                'icon'        => 'icon-leaf',
+                'url'         => Backend::url('individuart/materialize/carousels'),
+                'icon'        => 'icon-columns',
                 'permissions' => ['individuart.materialize.*'],
                 'order'       => 500,
+                'sideMenu' => [
+                    'carousels' => [
+                        'label' => 'individuart.materialize::lang.backend.carousels',
+                        'icon' => 'icon-arrows-h',
+                        'url' => Backend::url('individuart/materialize/carousels'),
+                    ]
+                ]
             ],
         ];
     }

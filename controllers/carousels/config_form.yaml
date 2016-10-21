@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Carousel
+
+# Model Form Field configuration
+form: $/individuart/materialize/models/carousel/fields.yaml
+
+# Model Class name
+modelClass: Individuart\Materialize\Models\Carousel
+
+# Default redirect location
+defaultRedirect: individuart/materialize/carousels
+
+# Create page
+create:
+    title: Create Carousel
+    redirect: individuart/materialize/carousels/update/:id
+    redirectClose: individuart/materialize/carousels
+
+# Update page
+update:
+    title: Edit Carousel
+    redirect: individuart/materialize/carousels
+    redirectClose: individuart/materialize/carousels
+
+# Preview page
+preview:
+    title: Preview Carousel
