@@ -1,4 +1,5 @@
 1.0.1: First version of Materialize
 1.0.2:
-    - 'Created table individuart_materialize_carousel'
+    - 'Created carousel tables'
     - create_carousels_table.php
+    - create_carousel_items_table.php

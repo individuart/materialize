@@ -14,8 +14,16 @@ return [
         'label_content' => 'Content',
         'label_featured_image' => 'Featured Image',
         'label_order' => 'Order',
+        'label_images' => 'Images',
+        'label_type' => 'Type',
+        'label_show_title' => 'Show Title',
+        'label_show_description' => 'Show Description',
 
+        'default' => 'Default',
+        'full_width' => 'Full Width',
+        'full_screen' => 'Full Screen',
         'carousels' => 'Carousels',
+
 
         'successfully_deleted' => 'Records successfully deleted',
         'delete_confirm' => 'Really delete selected records?',

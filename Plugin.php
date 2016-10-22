@@ -98,7 +98,7 @@ class Plugin extends PluginBase
                         'url' => Backend::url('individuart/materialize/carousels'),
                     ]
                 ]
-            ],
+            ]
         ];
     }
 

@@ -1,0 +1,30 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+    name:
+      label: individuart.materialize::lang.backend.label_name
+      required: true
+      searchable: true
+    title:
+      label: individuart.materialize::lang.backend.label_title
+      searchable: true
+    description:
+      label: individuart.materialize::lang.backend.label_description
+      searchable: true
+    sort_order:
+      label: individuart.materialize::lang.backend.label_order
+    published:
+      label: individuart.materialize::lang.backend.label_published
+      type: switch
+    carousel_item_image:
+      label: individuart.materialize::lang.backend.label_images
+      type: fileupload
+      mode: image
+      imageWidth: 600
+      imageHeight: 380
+      useCaption: true

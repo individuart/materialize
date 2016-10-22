@@ -12,6 +12,8 @@
         <div class="layout-row">
             <?= $this->formRender() ?>
         </div>
+        <h2><?=e(trans('individuart.materialize::lang.backend.label_images'))?></h2>
+        <?= $this->relationRender('carousel_items')?>
 
         <div class="form-buttons">
             <div class="loading-indicator-container">

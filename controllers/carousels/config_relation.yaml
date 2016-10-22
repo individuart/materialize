@@ -1,0 +1,13 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+carousel_items:
+    label: individuart.materialize::lang.backend.label_images
+    view:
+        list: $/individuart/materialize/models/carouselitem/columns.yaml
+        toolbarButtons: create|delete
+    manage:
+        form: $/individuart/materialize/models/carouselitem/fields.yaml
+        list: $/individuart/materialize/models/carouselitem/columns.yaml
+        recordsPerPage: 10
