@@ -1,0 +1,13 @@
+{{__SELF__.property('items')}} componente renderizado<br/>
+
+{% if __SELF__.property('type') == 1 %}
+    {%  partial '@carousel_default' %}
+{% endif %}
+
+{% if __SELF__.property('type') == 2 %}
+    {%  partial '@carousel_full_width' %}
+{% endif %}
+
+{% if __SELF__.property('type') == 3 %}
+    {%  partial '@carousel_full_screen' %}
+{% endif %}

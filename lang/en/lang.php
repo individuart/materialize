@@ -19,10 +19,18 @@ return [
         'label_show_title' => 'Show Title',
         'label_show_description' => 'Show Description',
 
+        //carousel
+
         'default' => 'Default',
         'full_width' => 'Full Width',
         'full_screen' => 'Full Screen',
         'carousels' => 'Carousels',
+        'carousel' => 'Carousel',
+        'carousel_component_description' => 'Add a Carousel to Your Page',
+        'items' => 'Items',
+        'items_description' => 'Number of items of carousel',
+        'items_validation' => 'The Items property can contain only numeric symbols',
+
 
 
         'successfully_deleted' => 'Records successfully deleted',

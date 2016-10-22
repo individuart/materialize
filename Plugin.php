@@ -51,10 +51,9 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return []; // Remove this line to activate
 
         return [
-            'Individuart\Materialize\Components\MyComponent' => 'myComponent',
+            'Individuart\Materialize\Components\Carousel' => 'Carousel',
         ];
     }
 
