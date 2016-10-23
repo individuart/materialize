@@ -73,6 +73,18 @@ class Carousel extends ComponentBase
         $type = $this->property('type');
 
 
+        switch($type)
+        {
+            case 1:
+                $this->addJs('components/carousel/assets/js/default.js');
+                break;
+            case 2:
+                $this->addJs('components/carousel/assets/js/full_width.js');
+                break;
+            case 3:
+                $this->addJs('components/carousel/assets/js/full_screen.js');
+                break;
+        }
 
 
         //$this->addJs('assets/js/work.min.js');
@@ -82,10 +94,11 @@ class Carousel extends ComponentBase
         //$this->addCss('https://fonts.googleapis.com/css?family=Josefin+Sans:400,300,300italic,400italic,700,700italic');
     }
 
-    public function images()
+    public function carousel_items()
     {
-       $images = '';
-       return images;
+        $carousel_id = $this->property('carousel');
+        $carousel_items = CarouselClass::find($carousel_id)->carousel_items;
+        return $carousel_items;
     }
 
 }

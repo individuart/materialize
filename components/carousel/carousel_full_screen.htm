@@ -1,32 +1,17 @@
 <div class="slider">
     <ul class="slides">
+        {% for item in items %}
         <li>
-            <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
+            <img src="{{item.carousel_item_image.path}}" alt="{{item.title}}">
             <div class="caption center-align">
-                <h3>This is our big Tagline!</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                {% if item.carousel_item_image.title is not empty %}
+                    <h3>{{item.carousel_item_image.title}}</h3>
+                {% endif %}
+                {% if item.carousel_item_image.description is not empty %}
+                    <h5 class="light grey-text text-lighten-3">{{item.carousel_item_image.description}}</h5>
+                {% endif %}
             </div>
         </li>
-        <li>
-            <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
-            <div class="caption left-align">
-                <h3>Left Aligned Caption</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </div>
-        </li>
-        <li>
-            <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
-            <div class="caption right-align">
-                <h3>Right Aligned Caption</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </div>
-        </li>
-        <li>
-            <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
-            <div class="caption center-align">
-                <h3>This is our big Tagline!</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </div>
-        </li>
+        {% endfor %}
     </ul>
 </div>
