@@ -51,4 +51,10 @@ class CarouselItem extends Model
         }
     }
 
+    public function scopePublished($query)
+    {
+        return $query->where('published',true);
+
+    }
+
 }

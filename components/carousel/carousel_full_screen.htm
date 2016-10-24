@@ -1,17 +1,19 @@
-<div class="slider">
+<div class="slider fullscreen">
     <ul class="slides">
         {% for item in items %}
-        <li>
-            <img src="{{item.carousel_item_image.path}}" alt="{{item.title}}">
-            <div class="caption center-align">
-                {% if item.carousel_item_image.title is not empty %}
-                    <h3>{{item.carousel_item_image.title}}</h3>
-                {% endif %}
-                {% if item.carousel_item_image.description is not empty %}
-                    <h5 class="light grey-text text-lighten-3">{{item.carousel_item_image.description}}</h5>
-                {% endif %}
-            </div>
-        </li>
+            {% if item.published %}
+                <li>
+                    <img src="{{item.carousel_item_image.path}}" alt="{{item.title}}">
+                    <div class="caption center-align">
+                        {% if item.carousel_item_image.title is not empty %}
+                            <h3>{{item.carousel_item_image.title}}</h3>
+                        {% endif %}
+                        {% if item.carousel_item_image.description is not empty %}
+                            <h5 class="light grey-text text-lighten-3">{{item.carousel_item_image.description}}</h5>
+                        {% endif %}
+                    </div>
+                </li>
+            {% endif%}
         {% endfor %}
     </ul>
 </div>

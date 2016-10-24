@@ -1,5 +1,7 @@
 <div class="carousel">
     {% for item in items %}
-    <a class="carousel-item" href=""><img src="{{item.carousel_item_image.path}}" alt="{{item.title}}"></a>
+        {% if item.published %}
+            <a class="carousel-item" href=""><img src="{{item.carousel_item_image.path}}" alt="{{item.title}}"></a>
+        {% endif%}
     {% endfor %}
 </div>

@@ -1,15 +1,8 @@
-<!--
-<div class="carousel">
+{#have to put the height manually in order to worpk porperly#}
+<div class="carousel carousel-slider center" style="height: 600px;">
     {% for item in items %}
-    <a class="carousel-item" href=""><img src="{{item.carousel_item_image.path}}" alt="{{item.title}}"></a>
+        {% if item.published %}
+            <a class="carousel-item" href="#"><img src="{{item.carousel_item_image.path}}"></a>
+        {% endif%}
     {% endfor %}
-</div>
--->
-
-
-<div class="carousel carousel-slider">
-    <a class="carousel-item" href="#one!"><img src="http://lorempixel.com/800/400/food/1"></a>
-    <a class="carousel-item" href="#two!"><img src="http://lorempixel.com/800/400/food/2"></a>
-    <a class="carousel-item" href="#three!"><img src="http://lorempixel.com/800/400/food/3"></a>
-    <a class="carousel-item" href="#four!"><img src="http://lorempixel.com/800/400/food/4"></a>
 </div>
