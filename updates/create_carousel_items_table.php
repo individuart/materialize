@@ -11,11 +11,12 @@ class CreateCarouselItemsTable extends Migration
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('name', 250)->nullable();
+            $table->string('name', 250);
             $table->string('title', 250)->nullable();
             $table->string('description', 250)->nullable();
             $table->boolean('published',false);
             $table->integer('sort_order');
+            $table->string('link',255)->nullable;
             $table->integer('carousel_id');
             $table->timestamps();
         });

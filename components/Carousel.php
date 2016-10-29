@@ -46,6 +46,7 @@ class Carousel extends ComponentBase
     public function getCarouselOptions()
     {
         $carousels = CarouselClass::published()->orderBy('sort_order','asc')->get();
+        $arr_carousels = array();
         if($carousels)
         {
             foreach($carousels as $carousel)
