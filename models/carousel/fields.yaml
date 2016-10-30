@@ -10,16 +10,6 @@ fields:
       label: individuart.materialize::lang.backend.label_name
       required: true
       type: text
-    show_title:
-      label: individuart.materialize::lang.backend.label_show_title
-      type: checkbox
-    show_description:
-      label: individuart.materialize::lang.backend.label_show_description
-      type: checkbox
-    carousel_type:
-      label: individuart.materialize::lang.backend.label_type
-      type: dropdown
-      options: listTypes
     published:
       label: individuart.materialize::lang.backend.label_published
       type: switch

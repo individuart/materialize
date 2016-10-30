@@ -5,11 +5,11 @@
                 <li>
                     <img src="{{item.carousel_item_image.path}}" alt="{{item.title}}">
                     <div class="caption center-align">
-                        {% if item.carousel_item_image.title is not empty %}
-                            <h3>{{item.carousel_item_image.title}}</h3>
+                        {% if item.title is not empty %}
+                            <h3>{{item.title}}</h3>
                         {% endif %}
-                        {% if item.carousel_item_image.description is not empty %}
-                            <h5 class="light grey-text text-lighten-3">{{item.carousel_item_image.description}}</h5>
+                        {% if item.description is not empty %}
+                            <h5 class="light grey-text text-lighten-3">{{item.description}}</h5>
                         {% endif %}
                     </div>
                 </li>

@@ -1,6 +1,7 @@
 <?php namespace Individuart\Materialize\Models;
 
 use Illuminate\Support\Facades\Lang;
+
 use Model;
 
 /**
@@ -8,6 +9,9 @@ use Model;
  */
 class Carousel extends Model
 {
+
+    use \October\Rain\Database\Traits\Validation;
+    use \October\Rain\Database\Traits\Sortable; //necesito esta clase para reordenar en el listado
 
     /**
      * @var string The database table used by the model.
@@ -38,6 +42,10 @@ class Carousel extends Model
     public $morphMany = [];
     public $attachOne = [];
     public $attachMany = [];
+
+    public $rules = [
+      'name' => 'required'
+    ];
 
 
     public function listTypes($keyValue = null, $fieldName = null)

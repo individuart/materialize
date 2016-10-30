@@ -18,6 +18,7 @@ return [
         'label_type' => 'Type',
         'label_show_title' => 'Show Title',
         'label_show_description' => 'Show Description',
+        'label_link' => 'Link',
 
         //carousel
 
@@ -31,6 +32,9 @@ return [
         'items_description' => 'Number of items of carousel',
         'items_validation' => 'The Items property can contain only numeric symbols',
 
+
+        'reorder' => 'Reorder',
+        'back' => 'Back',
 
 
         'successfully_deleted' => 'Records successfully deleted',

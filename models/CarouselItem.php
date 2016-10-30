@@ -8,6 +8,10 @@ use Model;
 class CarouselItem extends Model
 {
 
+    use \October\Rain\Database\Traits\Validation;
+    use \October\Rain\Database\Traits\Sortable; //necesito esta clase para reordenar en el listado
+
+
     /**
      * @var string The database table used by the model.
      */
@@ -39,6 +43,10 @@ class CarouselItem extends Model
         'carousel_item_image' => ['System\Models\File']
     ];
     public $attachMany = [];
+
+    public $rules = [
+        'name' => 'required'
+    ];
 
     public function getImageAttribute(){
         $item = CarouselItem::find($this->id);

@@ -1,7 +1,19 @@
 <div class="carousel">
     {% for item in items %}
         {% if item.published %}
-            <a class="carousel-item" href=""><img src="{{item.carousel_item_image.path}}" alt="{{item.title}}"></a>
+            {% if item.link is not empty %}
+                <a class="carousel-item" href="{{item.link}}">
+            {% else %}
+                <span class="carousel-item">
+            {% endif %}
+
+                <img src="{{item.carousel_item_image.path}}" alt="{{item.title}}">
+            {% if item.link is not empty %}
+                </a>
+            {% else %}
+                </span>
+            {% endif %}
+
         {% endif%}
     {% endfor %}
 </div>
