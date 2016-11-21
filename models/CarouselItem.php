@@ -48,6 +48,16 @@ class CarouselItem extends Model
         'name' => 'required'
     ];
 
+    /**
+     * Softly implement the TranslatableModel behavior.
+     */
+    public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
+    /**
+     * @var array Attributes that support translation, if available.
+     */
+    public $translatable = ['title','description'];
+
+
     public function getImageAttribute(){
         $item = CarouselItem::find($this->id);
         if($item->carousel_item_image)

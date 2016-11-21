@@ -101,4 +101,15 @@ class Plugin extends PluginBase
         ];
     }
 
+
+    /**
+     * Register components as snippets for RainLab Pages Plugin
+     */
+    public function registerPageSnippets()
+    {
+        return [
+            'Individuart\Materialize\Components\Carousel' => 'carousel'
+        ];
+    }
+
 }

@@ -24,6 +24,7 @@ class Carousel extends ComponentBase
                 'type'              => 'dropdown',
                 'placeholder'       => '',
             ],
+            /*
             'items' => [
                 'title'             => Lang::get('individuart.materialize::lang.backend.items'),
                 'description'       => Lang::get('individuart.materialize::lang.backend.items_description'),
@@ -31,7 +32,7 @@ class Carousel extends ComponentBase
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
                 'validationMessage' => Lang::get('individuart.materialize::lang.backend.items_validation')
-            ],
+            ],*/
             'type' => [
                 'title'             => Lang::get('individuart.materialize::lang.backend.label_type'),
                 'default'           => 1,
@@ -101,5 +102,6 @@ class Carousel extends ComponentBase
         $carousel_items = CarouselClass::find($carousel_id)->carousel_items;
         return $carousel_items;
     }
+
 
 }
