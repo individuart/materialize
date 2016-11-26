@@ -52,7 +52,6 @@ class Parallax extends ComponentBase
 
     public function onRun()
     {
-        dd($this->getImageOptions());
         $this->addJs('components/parallax/assets/js/parallax.js');
 
     }
