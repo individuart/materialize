@@ -32,7 +32,13 @@ return [
         'items_description' => 'Number of items of carousel',
         'items_validation' => 'The Items property can contain only numeric symbols',
 
+        //parallax
+        'parallax_component_description' => 'Add a Parallax to Your Page',
 
+
+        'image' => 'image',
+        'height' => 'height',
+        'only_numeric' => 'only numeric symbols',
         'reorder' => 'Reorder',
         'back' => 'Back',
 

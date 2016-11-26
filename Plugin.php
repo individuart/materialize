@@ -54,6 +54,7 @@ class Plugin extends PluginBase
 
         return [
             'Individuart\Materialize\Components\Carousel' => 'Carousel',
+            'Individuart\Materialize\Components\Parallax' => 'Parallax'
         ];
     }
 
@@ -108,7 +109,8 @@ class Plugin extends PluginBase
     public function registerPageSnippets()
     {
         return [
-            'Individuart\Materialize\Components\Carousel' => 'carousel'
+            'Individuart\Materialize\Components\Carousel' => 'carousel',
+            'Individuart\Materialize\Components\Parallax' => 'parallax'
         ];
     }
 
