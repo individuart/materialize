@@ -35,15 +35,24 @@ class Parallax extends ComponentBase
     }
 
     public function getImageOptions(){
+        $allowed_extensions = ['jpg','png','gif'];
         $files = scandir('storage/app/media/');
-        foreach($files as $ind=>$val){
-            $files2[$val] = $val;
+        if(!empty($files)){
+            foreach($files as $ind=>$val){
+                $extension =  strtolower(substr(strrchr($val,'.'),1));
+                if(in_array($extension,$allowed_extensions))
+                    $files2[$val] = $val;
+            }
+            return $files2;
+        }else{
+            return [];
         }
-        return $files2;
+
     }
 
     public function onRun()
     {
+        dd($this->getImageOptions());
         $this->addJs('components/parallax/assets/js/parallax.js');
 
     }
