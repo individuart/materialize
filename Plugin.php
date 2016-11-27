@@ -54,7 +54,8 @@ class Plugin extends PluginBase
 
         return [
             'Individuart\Materialize\Components\Carousel' => 'Carousel',
-            'Individuart\Materialize\Components\Parallax' => 'Parallax'
+            'Individuart\Materialize\Components\Parallax' => 'Parallax',
+            'Individuart\Materialize\Components\Parallax' => 'Collapsible'
         ];
     }
 
@@ -65,7 +66,6 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
 
         return [
             'individuart.materialize.some_permission' => [
@@ -96,6 +96,11 @@ class Plugin extends PluginBase
                         'label' => 'individuart.materialize::lang.backend.carousels',
                         'icon' => 'icon-arrows-h',
                         'url' => Backend::url('individuart/materialize/carousels'),
+                    ],
+                    'collapsibles' => [
+                        'label' => 'individuart.materialize::lang.backend.collapsibles',
+                        'icon' => 'icon-tasks',
+                        'url' => Backend::url('individuart/materialize/collapsibles'),
                     ]
                 ]
             ]
@@ -110,7 +115,8 @@ class Plugin extends PluginBase
     {
         return [
             'Individuart\Materialize\Components\Carousel' => 'carousel',
-            'Individuart\Materialize\Components\Parallax' => 'parallax'
+            'Individuart\Materialize\Components\Parallax' => 'parallax',
+            'Individuart\Materialize\Components\Collapsible' => 'collapsible'
         ];
     }
 

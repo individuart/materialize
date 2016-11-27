@@ -3,11 +3,11 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class CreateCarouselItemsTable extends Migration
+class CreateCollapsibleItemsTable extends Migration
 {
     public function up()
     {
-        Schema::create('individuart_materialize_carousel_items', function($table)
+        Schema::create('individuart_materialize_collapsible_items', function($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
@@ -16,14 +16,13 @@ class CreateCarouselItemsTable extends Migration
             $table->string('description', 250)->nullable();
             $table->boolean('published',false);
             $table->integer('sort_order');
-            $table->string('link',255)->nullable;
-            $table->integer('carousel_id');
+            $table->integer('collapsible_id');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('individuart_materialize_carousel_items');
+        Schema::dropIfExists('individuart_materialize_collapsible_items');
     }
 }

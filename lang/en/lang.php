@@ -19,6 +19,7 @@ return [
         'label_show_title' => 'Show Title',
         'label_show_description' => 'Show Description',
         'label_link' => 'Link',
+        'label_items' => 'Items',
 
         //carousel
 
@@ -31,9 +32,16 @@ return [
         'items' => 'Items',
         'items_description' => 'Number of items of carousel',
         'items_validation' => 'The Items property can contain only numeric symbols',
+        'new_carousel' => 'New Carousel',
 
         //parallax
         'parallax_component_description' => 'Add a Parallax to Your Page',
+
+        //collapsible
+        'collapsible' => 'Collapsible',
+        'collapsibles' => 'Collapsibles',
+        'new_collapsible' => 'New Collapsible',
+        'collapsible_component_description' => 'Add a Collapsible element to Your Page',
 
 
         'image' => 'image',

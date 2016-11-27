@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Collapsible
+
+# Model Form Field configuration
+form: $/individuart/materialize/models/collapsible/fields.yaml
+
+# Model Class name
+modelClass: Individuart\Materialize\Models\Collapsible
+
+# Default redirect location
+defaultRedirect: individuart/materialize/collapsibles
+
+# Create page
+create:
+    title: Create Collapsible
+    redirect: individuart/materialize/collapsibles/update/:id
+    redirectClose: individuart/materialize/collapsibles
+
+# Update page
+update:
+    title: Edit Collapsible
+    redirect: individuart/materialize/collapsibles
+    redirectClose: individuart/materialize/collapsibles
+
+# Preview page
+preview:
+    title: Preview Collapsible

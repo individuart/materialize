@@ -1,0 +1,13 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+collapsible_items:
+    label: individuart.materialize::lang.backend.label_items
+    view:
+        list: $/individuart/materialize/models/collapsibleitem/columns.yaml
+        toolbarButtons: create|delete
+    manage:
+        form: $/individuart/materialize/models/collapsibleitem/fields.yaml
+        list: $/individuart/materialize/models/collapsibleitem/columns.yaml
+        recordsPerPage: 10

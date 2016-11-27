@@ -1,8 +1,6 @@
 <?php namespace Individuart\Materialize\Components;
 
 use Cms\Classes\ComponentBase;
-use Cms\Classes\MediaLibrary;
-use Cms\Classes\Page;
 use Illuminate\Support\Facades\Lang;
 
 class Parallax extends ComponentBase

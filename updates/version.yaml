@@ -1,5 +1,7 @@
 1.0.1: First version of Materialize
 1.0.2:
-    - 'Created carousel tables'
+    - 'Create plugin tables'
     - create_carousels_table.php
     - create_carousel_items_table.php
+    - create_collapsibles_table.php
+    - create_collapsible_items_table.php
