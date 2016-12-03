@@ -1,5 +1,8 @@
 {% set items = __SELF__.collapsible_items %}
-<ul class="collapsible" data-collapsible="accordion">
+{% set popout = __SELF__.popout %}
+{% set type = __SELF__.type %}
+
+<ul class="collapsible {%if popout %} popout {% endif %}" data-collapsible="{{type}}">
     {% for item in items %}
         {% if item.published %}
             <li>

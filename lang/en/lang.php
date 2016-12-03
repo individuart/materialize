@@ -42,8 +42,11 @@ return [
         'collapsibles' => 'Collapsibles',
         'new_collapsible' => 'New Collapsible',
         'collapsible_component_description' => 'Add a Collapsible element to Your Page',
+        'expandable' => 'Expandable',
+        'accordion' => 'Accordion',
 
 
+        'type' => 'type',
         'image' => 'image',
         'height' => 'height',
         'only_numeric' => 'only numeric symbols',

@@ -96,5 +96,4 @@ class Carousel extends ComponentBase
         return $carousel_items;
     }
 
-
 }

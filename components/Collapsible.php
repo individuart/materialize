@@ -21,7 +21,15 @@ class Collapsible extends ComponentBase
             'collapsible' => [
                 'title'             => Lang::get('individuart.materialize::lang.backend.collapsible'),
                 'type'              => 'dropdown',
-                'placeholder'       => '',
+                'placeholder'       => ''
+            ],
+            'popout' => [
+                'title'             => 'popout',
+                'type'              => 'checkbox'
+            ],
+            'type' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.type'),
+                'type'              => 'dropdown'
             ]
         ];
     }
@@ -43,6 +51,11 @@ class Collapsible extends ComponentBase
 
     }
 
+    public function getTypeOptions()
+    {
+        return ['accordion'=>Lang::get('individuart.materialize::lang.backend.accordion'),'expandable'=>Lang::get('individuart.materialize::lang.backend.expandable')];
+    }
+
 
     public function onRun()
     {
@@ -56,6 +69,14 @@ class Collapsible extends ComponentBase
         $collapsible_id = $this->property('collapsible');
         $collapsible_items = CollapsibleClass::find($collapsible_id)->collapsible_items;
         return $collapsible_items;
+    }
+
+    public function popout(){
+        return $this->property('popout');
+    }
+
+    public function type(){
+        return $this->property('type');
     }
 
 }
