@@ -3,6 +3,7 @@
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Lang;
 use Individuart\Materialize\Models\Collapsible as CollapsibleClass;
+use Individuart\Materialize\Models\Color;
 
 class Collapsible extends ComponentBase
 {
@@ -30,7 +31,28 @@ class Collapsible extends ComponentBase
             'type' => [
                 'title'             => Lang::get('individuart.materialize::lang.backend.type'),
                 'type'              => 'dropdown'
+            ],
+            'itemsfontcolor' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.font_color'),
+                'type'              => 'dropdown',
+                'default'           => '',
+            ],
+            'itemsfontcolorvar' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.font_color_variant'),
+                'type'              => 'dropdown',
+                'default'       => ''
+            ],
+            'itemsbgfontcolor' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.font_background_color'),
+                'type'              => 'dropdown',
+                'default'           => '',
+            ],
+            'itemsbgfontcolorvar' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.font_background_color_variant'),
+                'type'              => 'dropdown',
+                'default'       => ''
             ]
+
         ];
     }
 
@@ -51,10 +73,42 @@ class Collapsible extends ComponentBase
 
     }
 
+    public function getColors()
+    {
+        $colors = new Color();
+        return $colors->colors;
+    }
+
+    public function getColorVariants()
+    {
+        $colors = new Color();
+        return $colors->color_variants;
+    }
+
     public function getTypeOptions()
     {
         return ['accordion'=>Lang::get('individuart.materialize::lang.backend.accordion'),'expandable'=>Lang::get('individuart.materialize::lang.backend.expandable')];
     }
+
+    public function getItemsfontcolorOptions()
+    {
+        return $this->getColors();
+    }
+    public function getItemsfontcolorvarOptions()
+    {
+        return $this->getColorVariants();
+    }
+    public function getItemsbgfontcolorOptions()
+    {
+        return $this->getColors();
+    }
+    public function getItemsbgfontcolorvarOptions()
+    {
+        return $this->getColorVariants();
+    }
+
+
+
 
 
     public function onRun()
@@ -78,5 +132,21 @@ class Collapsible extends ComponentBase
     public function type(){
         return $this->property('type');
     }
+
+    public function itemsfontcolor(){
+        return $this->property('itemsfontcolor');
+    }
+    public function itemsfontcolorvar(){
+        return $this->property('itemsfontcolorvar');
+    }
+
+    public function itemsbgfontcolor(){
+        return $this->property('itemsbgfontcolor');
+    }
+    public function itemsbgfontcolorvar(){
+        return $this->property('itemsbgfontcolorvar');
+    }
+
+
 
 }

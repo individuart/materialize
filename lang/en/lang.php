@@ -46,6 +46,10 @@ return [
         'accordion' => 'Accordion',
 
 
+        'font_color' => 'font color',
+        'font_color_variant' => 'font color variant',
+        'font_background_color' => 'font background color',
+        'font_background_color_variant' => 'font background color variant',
         'type' => 'type',
         'image' => 'image',
         'height' => 'height',
