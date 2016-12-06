@@ -46,6 +46,10 @@ return [
         'accordion' => 'Accordion',
 
 
+        'title_color' => 'title color',
+        'title_color_variant' => 'title color variant',
+        'title_background_color' => 'title background color',
+        'title_background_color_variant' => 'title background color variant',
         'font_color' => 'font color',
         'font_color_variant' => 'font color variant',
         'font_background_color' => 'font background color',

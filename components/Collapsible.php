@@ -32,6 +32,28 @@ class Collapsible extends ComponentBase
                 'title'             => Lang::get('individuart.materialize::lang.backend.type'),
                 'type'              => 'dropdown'
             ],
+
+            'titlefontcolor' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.title_color'),
+                'type'              => 'dropdown',
+                'default'           => '',
+            ],
+            'titlefontcolorvar' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.title_color_variant'),
+                'type'              => 'dropdown',
+                'default'       => ''
+            ],
+            'titlebgfontcolor' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.title_background_color'),
+                'type'              => 'dropdown',
+                'default'           => '',
+            ],
+            'titlebgfontcolorvar' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.title_background_color_variant'),
+                'type'              => 'dropdown',
+                'default'       => ''
+            ],
+
             'itemsfontcolor' => [
                 'title'             => Lang::get('individuart.materialize::lang.backend.font_color'),
                 'type'              => 'dropdown',
@@ -52,6 +74,7 @@ class Collapsible extends ComponentBase
                 'type'              => 'dropdown',
                 'default'       => ''
             ]
+
 
         ];
     }
@@ -107,6 +130,23 @@ class Collapsible extends ComponentBase
         return $this->getColorVariants();
     }
 
+    public function getTitlefontcolorOptions()
+    {
+        return $this->getColors();
+    }
+    public function getTitlefontcolorvarOptions()
+    {
+        return $this->getColorVariants();
+    }
+    public function getTitlebgfontcolorOptions()
+    {
+        return $this->getColors();
+    }
+    public function getTitlebgfontcolorvarOptions()
+    {
+        return $this->getColorVariants();
+    }
+
 
 
 
@@ -145,6 +185,20 @@ class Collapsible extends ComponentBase
     }
     public function itemsbgfontcolorvar(){
         return $this->property('itemsbgfontcolorvar');
+    }
+
+    public function titlefontcolor(){
+        return $this->property('titlefontcolor');
+    }
+    public function titlefontcolorvar(){
+        return $this->property('titlefontcolorvar');
+    }
+
+    public function titlebgfontcolor(){
+        return $this->property('titlebgfontcolor');
+    }
+    public function titlebgfontcolorvar(){
+        return $this->property('titlebgfontcolorvar');
     }
 
 

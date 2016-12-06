@@ -6,11 +6,16 @@
 {% set bgfontcolor = __SELF__.itemsbgfontcolor %}
 {% set bgfontcolorvar = __SELF__.itemsbgfontcolorvar %}
 
+{% set titlefontcolor = __SELF__.titlefontcolor %}
+{% set titlefontcolorvar = __SELF__.titlefontcolorvar %}
+{% set titlebgcolor = __SELF__.titlebgfontcolor %}
+{% set titlebgcolorvar = __SELF__.titlebgfontcolorvar %}
+
 <ul class="collapsible {%if popout %} popout {% endif %}" data-collapsible="{{type}}">
     {% for item in items %}
         {% if item.published %}
             <li>
-                <div class="collapsible-header">{{item.title}}</div>
+                <div class="collapsible-header {{titlebgfontcolorvar}} {{titlebgfontcolor}} {%if titlefontcolor %}{{titlefontcolor}}-text{%endif%} {%if titlefontcolor %}text-{{titlefontcolorvar}}{%endif%}  ">{{item.title}}</div>
                 <div class="collapsible-body {{bgfontcolorvar}} {{bgfontcolor}} {%if itemsfontcolor %}{{itemsfontcolor}}-text{%endif%} {%if itemsfontcolor %}text-{{itemsfontcolorvar}}{%endif%} ">{{ item.description | raw}}</div>
             </li>
         {% endif%}
