@@ -39,7 +39,7 @@ class Parallax extends ComponentBase
             foreach($files as $ind=>$val){
                 $extension =  strtolower(substr(strrchr($val,'.'),1));
                 if(in_array($extension,$allowed_extensions))
-                    $files2[$val] = $val;
+                    $files2[$val] = '<img src="/storage/app/media/'.$val.'" width="140">';
             }
             return $files2;
         }else{
