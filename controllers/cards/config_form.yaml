@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Card
+
+# Model Form Field configuration
+form: $/individuart/materialize/models/card/fields.yaml
+
+# Model Class name
+modelClass: Individuart\Materialize\Models\Card
+
+# Default redirect location
+defaultRedirect: individuart/materialize/cards
+
+# Create page
+create:
+    title: Create Card
+    redirect: individuart/materialize/cards/update/:id
+    redirectClose: individuart/materialize/cards
+
+# Update page
+update:
+    title: Edit Card
+    redirect: individuart/materialize/cards
+    redirectClose: individuart/materialize/cards
+
+# Preview page
+preview:
+    title: Preview Card

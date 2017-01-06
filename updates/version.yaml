@@ -5,3 +5,4 @@
     - create_carousel_items_table.php
     - create_collapsibles_table.php
     - create_collapsible_items_table.php
+    - create_cards_table.php

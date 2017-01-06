@@ -1,0 +1,34 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+    name:
+      label: individuart.materialize::lang.backend.label_name
+      required: true
+      searchable: true
+    title:
+      label: individuart.materialize::lang.backend.label_title
+      required: true
+      searchable: true
+    description:
+      label: individuart.materialize::lang.backend.label_description
+      searchable: true
+      type: richeditor
+    link:
+      label: individuart.materialize::lang.backend.label_link
+    link_text:
+      label: individuart.materialize::lang.backend.label_link_text
+    card_image:
+      label: individuart.materialize::lang.backend.label_images
+      type: fileupload
+      mode: image
+      imageWidth: 600
+      imageHeight: 380
+      useCaption: true
+    published:
+      label: individuart.materialize::lang.backend.label_published
+      type: switch

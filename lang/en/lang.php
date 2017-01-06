@@ -19,6 +19,7 @@ return [
         'label_show_title' => 'Show Title',
         'label_show_description' => 'Show Description',
         'label_link' => 'Link',
+        'label_link_text' => 'Link Text',
         'label_items' => 'Items',
 
         //carousel
@@ -44,6 +45,11 @@ return [
         'collapsible_component_description' => 'Add a Collapsible element to Your Page',
         'expandable' => 'Expandable',
         'accordion' => 'Accordion',
+
+        //cards
+        'card' => 'Card',
+        'cards' => 'Cards',
+        'new_card' => 'New Card',
 
 
         'title_color' => 'title color',

@@ -101,6 +101,11 @@ class Plugin extends PluginBase
                         'label' => 'individuart.materialize::lang.backend.collapsibles',
                         'icon' => 'icon-tasks',
                         'url' => Backend::url('individuart/materialize/collapsibles'),
+                    ],
+                    'cards' => [
+                        'label' => 'individuart.materialize::lang.backend.cards',
+                        'icon' => 'icon-picture-o',
+                        'url' => Backend::url('individuart/materialize/cards'),
                     ]
                 ]
             ]
