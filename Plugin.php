@@ -121,7 +121,8 @@ class Plugin extends PluginBase
         return [
             'Individuart\Materialize\Components\Carousel' => 'carousel',
             'Individuart\Materialize\Components\Parallax' => 'parallax',
-            'Individuart\Materialize\Components\Collapsible' => 'collapsible'
+            'Individuart\Materialize\Components\Collapsible' => 'collapsible',
+            'Individuart\Materialize\Components\Card' => 'card'
         ];
     }
 

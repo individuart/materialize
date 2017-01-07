@@ -50,6 +50,11 @@ return [
         'card' => 'Card',
         'cards' => 'Cards',
         'new_card' => 'New Card',
+        'card_component_description' => 'Add a Materialize Card to Your Page',
+        'default_card' => ' Default Card',
+        'horizontal_card' => 'Horizontal Card',
+        'reveal_card' => 'Reveal Card',
+        'label_sticky_action' => 'Sticky action?',
 
 
         'title_color' => 'title color',
