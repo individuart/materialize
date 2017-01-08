@@ -21,6 +21,7 @@ return [
         'label_link' => 'Link',
         'label_link_text' => 'Link Text',
         'label_items' => 'Items',
+        'label_size' => 'size',
 
         //carousel
 
@@ -54,7 +55,15 @@ return [
         'default_card' => ' Default Card',
         'horizontal_card' => 'Horizontal Card',
         'reveal_card' => 'Reveal Card',
+        'card_panel' => 'Card Panel',
         'label_sticky_action' => 'Sticky action?',
+        'label_small' => 'Small',
+        'label_medium' => 'Medium',
+        'label_large' => 'Large',
+        'label_show_image' => 'Show image',
+        'label_no' => 'No',
+        'label_yes' => 'Yes',
+        'label_default' => 'Por defecto',
 
 
         'title_color' => 'title color',

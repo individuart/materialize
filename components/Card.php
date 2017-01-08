@@ -2,6 +2,7 @@
 
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Lang;
+use Individuart\Materialize\Models\Card as CardClass;
 use Illuminate\Support\Facades\Request;
 
 class Card extends ComponentBase
@@ -18,9 +19,14 @@ class Card extends ComponentBase
     public function defineProperties()
     {
         return [
+            'card' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.card'),
+                'type'              => 'dropdown',
+                'placeholder'       => ''
+            ],
             'type' => [
                 'title'             => Lang::get('individuart.materialize::lang.backend.label_type'),
-                'default'           => 1,
+                'default'           => 'default',
                 'type'              => 'dropdown',
                 'placeholder'       => ''
             ],
@@ -28,16 +34,45 @@ class Card extends ComponentBase
                 'title'             => Lang::get('individuart.materialize::lang.backend.label_sticky_action'),
                 'depends'           => ['type'],
                 'type'              => 'dropdown'
-            ]
+            ],
+            'size' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.label_size'),
+                'default'           => '',
+                'type'              => 'dropdown'
+            ],
+            'showimage' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.label_show_image'),
+                'type'              => 'dropdown',
+                'default'           =>'no'
+            ],
+
         ];
+    }
+
+    public function getCardOptions()
+    {
+        $cards = CardClass::published()->orderBy('name','asc')->get();
+        $arr_cards = array();
+        if($cards)
+        {
+            foreach($cards as $card)
+            {
+                $arr_cards[$card->id] = $card->name;
+            }
+            return $arr_cards;
+        }else{
+            return [];
+        }
+
     }
 
     public function getTypeOptions()
     {
         return [
-            '1' => Lang::get('individuart.materialize::lang.backend.default_card'),
-            '2' => Lang::get('individuart.materialize::lang.backend.horizontal_card'),
-            '3' => Lang::get('individuart.materialize::lang.backend.reveal_card')
+            'default' => Lang::get('individuart.materialize::lang.backend.default_card'),
+            'horizontal' => Lang::get('individuart.materialize::lang.backend.horizontal_card'),
+            'reveal' => Lang::get('individuart.materialize::lang.backend.reveal_card'),
+            'panel' => Lang::get('individuart.materialize::lang.backend.card_panel')
         ];
     }
 
@@ -45,13 +80,57 @@ class Card extends ComponentBase
     {
         $cardtype = Request::input('type'); //load the type property value from POST
         $stickyaction = [
-            '1' => [],
-            '2' => [],
-            '3' => ['no' => false, 'yes' => true]
+            'default' => [],
+            'horizontal' => [],
+            'reveal' => ['no' => 'no', 'yes' => 'yes'],
+            'panel' => []
         ];
 
         return $stickyaction[$cardtype];
 
     }
+
+    public function getSizeOptions()
+    {
+        return [
+            '' => Lang::get('individuart.materialize::lang.backend.label_default'),
+            'small' => Lang::get('individuart.materialize::lang.backend.label_small'),
+            'medium' => Lang::get('individuart.materialize::lang.backend.label_medium'),
+            'large' => Lang::get('individuart.materialize::lang.backend.label_large')
+        ];
+    }
+
+    public function getShowimageOptions()
+    {
+        return [
+            'no' => Lang::get('individuart.materialize::lang.backend.label_no'),
+            'yes' => Lang::get('individuart.materialize::lang.backend.label_yes')
+        ];
+    }
+
+    public function onRun()
+    {
+        $this->addJs('components/collapsible/assets/js/default.js');
+
+    }
+
+    public function card(){
+        $card_id = $this->property('card');
+        $card = CardClass::find($card_id);
+        return $card;
+    }
+    public function stickyaction(){
+        return $this->property('stickyaction');
+    }
+    public function size(){
+        return $this->property('size');
+    }
+    public function type(){
+        return $this->property('type');
+    }
+    public function showimage(){
+        return $this->property('showimage');
+    }
+
 
 }

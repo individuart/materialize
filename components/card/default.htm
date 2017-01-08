@@ -1,11 +1,68 @@
-<div class="card blue-grey darken-1">
-    <div class="card-content white-text">
-        <span class="card-title">Card Title</span>
-        <p>I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.</p>
-    </div>
-    <div class="card-action">
-        <a href="#">This is a link</a>
-        <a href="#">This is a link</a>
+{% set card = __SELF__.card %}
+{% set stickyaction = __SELF__.stickyaction %}
+{% set size = __SELF__.size %}
+{% set type = __SELF__.type %}
+{% set showimage = __SELF__.showimage %}
+
+
+{% if type == 'panel' %}
+
+<div class="card-panel teal">
+    <div class="white-text">
+        {{card.description | raw}}
     </div>
 </div>
+
+{% else %}
+
+<div class="card {{size}} {{type}} blue-grey darken-1 {% if type == 'reveal' and stickyaction == 'yes' %}sticky-action{% endif %}">
+
+    {% if showimage=='yes' %}
+    <div class="card-image {% if type == 'reveal' %} waves-effect waves-block waves-light {% endif%}" >
+        {% if card.card_image is not empty %}
+        <img {% if type == 'reveal' %} class="activator" {% endif%} src="{{card.card_image.path}}" alt="">
+        {% endif %}
+    </div>
+    {% endif %}
+
+    {% if type == 'horizontal' %}
+    <div class="card-stacked">
+    {% endif %}
+
+    <div class="card-content white-text">
+        <span class="card-title {% if type == 'reveal' %} activator {% endif%}">{{card.title}} {% if type == 'reveal' %}<i class="material-icons right">more_vert</i>{% endif %} </span>
+        <div>
+
+            {% if type == 'reveal' %}
+            <p><a href="{{card.link}}">{{card.link_text}}</a></p>
+            {% else %}
+            {{card.description | raw}}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="card-action">
+        <a href="{{card.link}}">{{card.link_text}}</a>
+    </div>
+
+    {% if type == 'reveal' %}
+    <div class="card-reveal">
+        <span class="card-title">{{card.title}}<i class="material-icons right">close</i></span>
+        <div>
+            {{card.description | raw}}
+        </div>
+    </div>
+
+    {% endif %}
+
+
+
+    {% if type == 'horizontal' %}
+    </div>
+    {% endif %}
+
+
+</div>
+
+{% endif%}
+
