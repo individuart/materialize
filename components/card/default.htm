@@ -4,10 +4,15 @@
 {% set type = __SELF__.type %}
 {% set showimage = __SELF__.showimage %}
 
+{% set titlefontcolor = __SELF__.titlefontcolor %}
+{% set titlefontcolorvar = __SELF__.titlefontcolorvar %}
+{% set cardbgcolor = __SELF__.cardbgcolor %}
+{% set cardbgcolorvar = __SELF__.cardbgcolorvar %}
+
 
 {% if type == 'panel' %}
 
-<div class="card-panel teal">
+<div class="card-panel {%if cardbgcolor %}{{cardbgcolor}}{%endif%} {%if cardbgcolorvar %}{{cardbgcolorvar}}{%endif%}">
     <div class="white-text">
         {{card.description | raw}}
     </div>
@@ -15,7 +20,7 @@
 
 {% else %}
 
-<div class="card {{size}} {{type}} blue-grey darken-1 {% if type == 'reveal' and stickyaction == 'yes' %}sticky-action{% endif %}">
+<div class="card {{size}} {{type}} {%if cardbgcolor %}{{cardbgcolor}}{%endif%} {%if cardbgcolorvar %}{{cardbgcolorvar}}{%endif%} {% if type == 'reveal' and stickyaction == 'yes' %}sticky-action{% endif %}">
 
     {% if showimage=='yes' %}
     <div class="card-image {% if type == 'reveal' %} waves-effect waves-block waves-light {% endif%}" >
@@ -30,20 +35,21 @@
     {% endif %}
 
     <div class="card-content white-text">
-        <span class="card-title {% if type == 'reveal' %} activator {% endif%}">{{card.title}} {% if type == 'reveal' %}<i class="material-icons right">more_vert</i>{% endif %} </span>
+        <span class="card-title {%if titlefontcolor %}{{titlefontcolor}}-text{%endif%} {%if titlefontcolorvar %}text-{{titlefontcolorvar}}{%endif%} {% if type == 'reveal' %} activator {% endif%}">{{card.title}} {% if type == 'reveal' %}<i class="material-icons right">more_vert</i>{% endif %} </span>
         <div>
 
-            {% if type == 'reveal' %}
-            <p><a href="{{card.link}}">{{card.link_text}}</a></p>
-            {% else %}
-            {{card.description | raw}}
+            {% if type != 'reveal' %}
+                {{card.description | raw}}
             {% endif %}
         </div>
     </div>
 
+    {% if card.link is not empty and card.link_text is not empty %}
     <div class="card-action">
         <a href="{{card.link}}">{{card.link_text}}</a>
     </div>
+    {% endif %}
+
 
     {% if type == 'reveal' %}
     <div class="card-reveal">

@@ -4,6 +4,7 @@ use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Lang;
 use Individuart\Materialize\Models\Card as CardClass;
 use Illuminate\Support\Facades\Request;
+use Individuart\Materialize\Models\Color;
 
 class Card extends ComponentBase
 {
@@ -45,6 +46,26 @@ class Card extends ComponentBase
                 'type'              => 'dropdown',
                 'default'           =>'no'
             ],
+            'titlefontcolor' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.title_color'),
+                'type'              => 'dropdown',
+                'default'           => '',
+            ],
+            'titlefontcolorvar' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.title_color_variant'),
+                'type'              => 'dropdown',
+                'default'       => ''
+            ],
+            'cardbgcolor' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.background_color'),
+                'type'              => 'dropdown',
+                'default'           => '',
+            ],
+            'cardbgcolorvar' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.background_color_variant'),
+                'type'              => 'dropdown',
+                'default'       => ''
+            ]
 
         ];
     }
@@ -108,6 +129,35 @@ class Card extends ComponentBase
         ];
     }
 
+    public function getColors()
+    {
+        $colors = new Color();
+        return $colors->colors;
+    }
+
+    public function getColorVariants()
+    {
+        $colors = new Color();
+        return $colors->color_variants;
+    }
+
+    public function getTitlefontcolorOptions()
+    {
+        return $this->getColors();
+    }
+    public function getTitlefontcolorvarOptions()
+    {
+        return $this->getColorVariants();
+    }
+    public function getCardbgcolorOptions()
+    {
+        return $this->getColors();
+    }
+    public function getCardbgcolorvarOptions()
+    {
+        return $this->getColorVariants();
+    }
+
     public function onRun()
     {
         $this->addJs('components/collapsible/assets/js/default.js');
@@ -131,6 +181,21 @@ class Card extends ComponentBase
     public function showimage(){
         return $this->property('showimage');
     }
+
+    public function titlefontcolor(){
+        return $this->property('titlefontcolor');
+    }
+    public function titlefontcolorvar(){
+        return $this->property('titlefontcolorvar');
+    }
+    public function cardbgcolor(){
+        return $this->property('cardbgcolor');
+    }
+    public function cardbgcolorvar(){
+        return $this->property('cardbgcolorvar');
+    }
+
+
 
 
 }

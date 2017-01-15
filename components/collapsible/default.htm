@@ -15,8 +15,8 @@
     {% for item in items %}
         {% if item.published %}
             <li>
-                <div class="collapsible-header {{titlebgcolorvar}} {{titlebgcolor}} {%if titlefontcolor %}{{titlefontcolor}}-text{%endif%} {%if titlefontcolor %}text-{{titlefontcolorvar}}{%endif%}  ">{{item.title}}</div>
-                <div class="collapsible-body {{bgfontcolorvar}} {{bgfontcolor}} {%if itemsfontcolor %}{{itemsfontcolor}}-text{%endif%} {%if itemsfontcolor %}text-{{itemsfontcolorvar}}{%endif%} ">{{ item.description | raw}}</div>
+                <div class="collapsible-header {{titlebgcolorvar}} {{titlebgcolor}} {%if titlefontcolor %}{{titlefontcolor}}-text{%endif%} {%if titlefontcolorvar %}text-{{titlefontcolorvar}}{%endif%}  ">{{item.title}}</div>
+                <div class="collapsible-body {{bgfontcolorvar}} {{bgfontcolor}} {%if itemsfontcolor %}{{itemsfontcolor}}-text{%endif%} {%if itemsfontcolorvar %}text-{{itemsfontcolorvar}}{%endif%} ">{{ item.description | raw}}</div>
             </li>
         {% endif%}
     {% endfor %}

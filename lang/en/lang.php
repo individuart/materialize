@@ -68,6 +68,8 @@ return [
 
         'title_color' => 'title color',
         'title_color_variant' => 'title color variant',
+        'background_color' => 'background color',
+        'background_color_variant' => 'background color variant',
         'title_background_color' => 'title background color',
         'title_background_color_variant' => 'title background color variant',
         'font_color' => 'font color',
