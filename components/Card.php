@@ -56,6 +56,16 @@ class Card extends ComponentBase
                 'type'              => 'dropdown',
                 'default'       => ''
             ],
+            'contentfontcolor' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.content_color'),
+                'type'              => 'dropdown',
+                'default'           => '',
+            ],
+            'contentfontcolorvar' => [
+                'title'             => Lang::get('individuart.materialize::lang.backend.content_color_variant'),
+                'type'              => 'dropdown',
+                'default'       => ''
+            ],
             'cardbgcolor' => [
                 'title'             => Lang::get('individuart.materialize::lang.backend.background_color'),
                 'type'              => 'dropdown',
@@ -149,6 +159,14 @@ class Card extends ComponentBase
     {
         return $this->getColorVariants();
     }
+    public function getContentfontcolorOptions()
+    {
+        return $this->getColors();
+    }
+    public function getContentfontcolorvarOptions()
+    {
+        return $this->getColorVariants();
+    }
     public function getCardbgcolorOptions()
     {
         return $this->getColors();
@@ -187,6 +205,12 @@ class Card extends ComponentBase
     }
     public function titlefontcolorvar(){
         return $this->property('titlefontcolorvar');
+    }
+    public function contentfontcolor(){
+        return $this->property('contentfontcolor');
+    }
+    public function contentfontcolorvar(){
+        return $this->property('contentfontcolorvar');
     }
     public function cardbgcolor(){
         return $this->property('cardbgcolor');

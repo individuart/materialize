@@ -6,6 +6,8 @@
 
 {% set titlefontcolor = __SELF__.titlefontcolor %}
 {% set titlefontcolorvar = __SELF__.titlefontcolorvar %}
+{% set contentfontcolor = __SELF__.contentfontcolor %}
+{% set contentfontcolorvar = __SELF__.contentfontcolorvar %}
 {% set cardbgcolor = __SELF__.cardbgcolor %}
 {% set cardbgcolorvar = __SELF__.cardbgcolorvar %}
 
@@ -34,9 +36,9 @@
     <div class="card-stacked">
     {% endif %}
 
-    <div class="card-content white-text">
+    <div class="card-content">
         <span class="card-title {%if titlefontcolor %}{{titlefontcolor}}-text{%endif%} {%if titlefontcolorvar %}text-{{titlefontcolorvar}}{%endif%} {% if type == 'reveal' %} activator {% endif%}">{{card.title}} {% if type == 'reveal' %}<i class="material-icons right">more_vert</i>{% endif %} </span>
-        <div>
+        <div class="{%if contentfontcolor %}{{contentfontcolor}}-text{%endif%} {%if contentfontcolorvar %}text-{{contentfontcolorvar}}{%endif%}">
 
             {% if type != 'reveal' %}
                 {{card.description | raw}}
@@ -54,7 +56,7 @@
     {% if type == 'reveal' %}
     <div class="card-reveal">
         <span class="card-title">{{card.title}}<i class="material-icons right">close</i></span>
-        <div>
+        <div class="{%if contentfontcolor %}{{contentfontcolor}}-text{%endif%} {%if contentfontcolorvar %}text-{{contentfontcolorvar}}{%endif%}">
             {{card.description | raw}}
         </div>
     </div>
