@@ -55,7 +55,8 @@ class Plugin extends PluginBase
         return [
             'Individuart\Materialize\Components\Carousel' => 'Carousel',
             'Individuart\Materialize\Components\Parallax' => 'Parallax',
-            'Individuart\Materialize\Components\Parallax' => 'Collapsible'
+            'Individuart\Materialize\Components\Collapsible' => 'Collapsible',
+            'Individuart\Materialize\Components\Card' => 'Card'
         ];
     }
 
