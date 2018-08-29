@@ -36,6 +36,19 @@ return [
         'items_validation' => 'The Items property can contain only numeric symbols',
         'new_carousel' => 'New Carousel',
 
+        //slider
+
+        'default' => 'Default',
+        'full_width' => 'Full Width',
+        'full_screen' => 'Full Screen',
+        'sliders' => 'Sliders',
+        'slider' => 'Slider',
+        'slider_component_description' => 'Add a Slider to Your Page',
+        'items' => 'Items',
+        'items_description' => 'Number of items of slider',
+        'items_validation' => 'The Items property can contain only numeric symbols',
+        'new_slider' => 'New Slider',
+
         //parallax
         'parallax_component_description' => 'Add a Parallax to Your Page',
 

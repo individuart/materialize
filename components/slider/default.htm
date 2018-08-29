@@ -1,0 +1,27 @@
+{% set items = __SELF__.slider_items %}
+<div class="slider">
+    <ul class="slides">
+        {% for item in items %}
+        {% if item.published %}
+        <li>
+            {% if item.link is not empty %}
+            <a class="slider-item" href="{{item.link}}">
+                {% else %}
+                <span class="slider-item">
+                    {% endif %}
+                    <img src="{{item.slider_item_image.path}}" alt="{{item.title}}">
+                    <div class="caption center-align">
+                      <h3>{{item.title}}</h3>
+                      <h5 class="light grey-text text-lighten-3">{{item.description}}</h5>
+                    </div>
+                    {% if item.link is not empty %}
+            </a>
+            {% else %}
+            </span>
+            {% endif %}
+        </li>
+
+        {% endif%}
+        {% endfor %}
+    </ul>
+</div>

@@ -56,7 +56,8 @@ class Plugin extends PluginBase
             'Individuart\Materialize\Components\Carousel' => 'Carousel',
             'Individuart\Materialize\Components\Parallax' => 'Parallax',
             'Individuart\Materialize\Components\Collapsible' => 'Collapsible',
-            'Individuart\Materialize\Components\Card' => 'Card'
+            'Individuart\Materialize\Components\Card' => 'Card',
+            'Individuart\Materialize\Components\Slider' => 'Slider',
         ];
     }
 
@@ -107,7 +108,12 @@ class Plugin extends PluginBase
                         'label' => 'individuart.materialize::lang.backend.cards',
                         'icon' => 'icon-picture-o',
                         'url' => Backend::url('individuart/materialize/cards'),
-                    ]
+                    ],
+                    'sliders' => [
+                        'label' => 'individuart.materialize::lang.backend.sliders',
+                        'icon' => 'icon-exchange',
+                        'url' => Backend::url('individuart/materialize/sliders'),
+                    ],
                 ]
             ]
         ];
@@ -123,7 +129,8 @@ class Plugin extends PluginBase
             'Individuart\Materialize\Components\Carousel' => 'carousel',
             'Individuart\Materialize\Components\Parallax' => 'parallax',
             'Individuart\Materialize\Components\Collapsible' => 'collapsible',
-            'Individuart\Materialize\Components\Card' => 'card'
+            'Individuart\Materialize\Components\Card' => 'card',
+            'Individuart\Materialize\Components\Slider' => 'slider',
         ];
     }
 

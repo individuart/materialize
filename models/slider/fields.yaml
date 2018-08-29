@@ -1,0 +1,15 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+    name:
+      label: individuart.materialize::lang.backend.label_name
+      required: true
+      type: text
+    published:
+      label: individuart.materialize::lang.backend.label_published
+      type: switch

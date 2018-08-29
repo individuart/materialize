@@ -36,6 +36,19 @@ return [
         'items_validation' => 'La propiedad items sólo puede contener símbolos numéricos',
         'new_carousel' => 'Nuevo Carrusel',
 
+        //slider
+
+        'default' => 'Por defecto',
+        'full_width' => 'Ancho completo',
+        'full_screen' => 'Pantall completa',
+        'carousels' => 'Carousels',
+        'carousel' => 'Carousel',
+        'slider_component_description' => 'Añade un Slider a tu página',
+        'items' => 'Items',
+        'items_description' => 'Número de items del slider',
+        'items_validation' => 'La propiedad items sólo puede contener símbolos numéricos',
+        'new_slider' => 'Nuevo Slider',
+
         //parallax
         'parallax_component_description' => 'Añade un parallax a tu página',
 

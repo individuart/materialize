@@ -6,3 +6,8 @@
     - create_collapsibles_table.php
     - create_collapsible_items_table.php
     - create_cards_table.php
+1.1:
+    - 'Add slider component'
+    - create_sliders_table.php
+    - create_slider_items_table.php
+
