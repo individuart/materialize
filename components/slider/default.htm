@@ -1,5 +1,14 @@
 {% set items = __SELF__.slider_items %}
-<div class="slider">
+
+{% set height = __SELF__.height %}
+{% set showindicators = __SELF__.showindicators %}
+{% set textalign = __SELF__.textalign%}
+{% set titlefontcolor = __SELF__.titlefontcolor %}
+{% set titlefontcolorvar = __SELF__.titlefontcolorvar %}
+{% set subtitlefontcolor = __SELF__.subtitlefontcolor %}
+{% set subtitlefontcolorvar = __SELF__.subtitlefontcolorvar %}
+
+<div class="slider" id="{{__SELF__.id}}">
     <ul class="slides">
         {% for item in items %}
         {% if item.published %}
@@ -10,10 +19,12 @@
                 <span class="slider-item">
                     {% endif %}
                     <img src="{{item.slider_item_image.path}}" alt="{{item.title}}">
-                    <div class="caption center-align">
-                      <h3>{{item.title}}</h3>
-                      <h5 class="light grey-text text-lighten-3">{{item.description}}</h5>
+                    {% if(__SELF__.showtexts)%}
+                    <div class="caption {{textalign}}">
+                      <h3 class="{%if titlefontcolor %}{{titlefontcolor}}-text{%endif%} {%if titlefontcolorvar %}text-{{titlefontcolorvar}}{%endif%}">{{item.title}}</h3>
+                      <h5 class="{%if subtitlefontcolor %}{{subtitlefontcolor}}-text{%endif%} {%if subtitlefontcolorvar %}text-{{subtitlefontcolorvar}}{%endif%}">{{item.description}}</h5>
                     </div>
+                    {% endif %}}
                     {% if item.link is not empty %}
             </a>
             {% else %}
@@ -25,3 +36,19 @@
         {% endfor %}
     </ul>
 </div>
+<script>
+    $(document).ready(function () {
+        createSlider('{{__SELF__.id}}', {
+        {
+            height
+        }
+    },
+        {
+            {
+                showindicators
+            }
+        }
+    )
+        ;
+    });
+</script>

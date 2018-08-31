@@ -139,41 +139,29 @@ class Card extends ComponentBase
         ];
     }
 
-    public function getColors()
-    {
-        $colors = new Color();
-        return $colors->colors;
-    }
-
-    public function getColorVariants()
-    {
-        $colors = new Color();
-        return $colors->color_variants;
-    }
-
     public function getTitlefontcolorOptions()
     {
-        return $this->getColors();
+        return Color::getColors();
     }
     public function getTitlefontcolorvarOptions()
     {
-        return $this->getColorVariants();
+        return Color::getColorVariants();
     }
     public function getContentfontcolorOptions()
     {
-        return $this->getColors();
+        return Color::getColors();
     }
     public function getContentfontcolorvarOptions()
     {
-        return $this->getColorVariants();
+        return Color::getColorVariants();
     }
     public function getCardbgcolorOptions()
     {
-        return $this->getColors();
+        return Color::getColors();
     }
     public function getCardbgcolorvarOptions()
     {
-        return $this->getColorVariants();
+        return Color::getColorVariants();
     }
 
     public function onRun()

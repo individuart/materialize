@@ -8,35 +8,7 @@ use Model;
 class Color extends Model
 {
 
-    /**
-     * @var string The database table used by the model.
-     */
-    public $table = 'individuart_materialize_colors';
-
-    /**
-     * @var array Guarded fields
-     */
-    protected $guarded = ['*'];
-
-    /**
-     * @var array Fillable fields
-     */
-    protected $fillable = [];
-
-    /**
-     * @var array Relations
-     */
-    public $hasOne = [];
-    public $hasMany = [];
-    public $belongsTo = [];
-    public $belongsToMany = [];
-    public $morphTo = [];
-    public $morphOne = [];
-    public $morphMany = [];
-    public $attachOne = [];
-    public $attachMany = [];
-
-    public $colors = [
+    public static $colors = [
         "" => "default",
         "materialize-red" => "materialize-red",
         "red" => "red",
@@ -63,7 +35,7 @@ class Color extends Model
         "white" => "white",
     ];
 
-    public $color_variants = [
+    public static $color_variants = [
         "" => "default",
         "lighten-5" => "lighten-5",
         "lighten-4" => "lighten-4",
@@ -80,5 +52,17 @@ class Color extends Model
         "accent-4" => "accent-4",
 
     ];
+
+    public static function getColors()
+    {
+        ksort(self::$colors);
+        return self::$colors;
+    }
+
+    public static function getColorVariants()
+    {
+        ksort(self::$color_variants);
+        return self::$color_variants;
+    }
 
 }
