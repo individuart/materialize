@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Slider
+
+# Model Form Field configuration
+form: $/individuart/materialize/models/slider/fields.yaml
+
+# Model Class name
+modelClass: Individuart\Materialize\Models\Slider
+
+# Default redirect location
+defaultRedirect: individuart/materialize/sliders
+
+# Create page
+create:
+    title: Create Slider
+    redirect: individuart/materialize/sliders/update/:id
+    redirectClose: individuart/materialize/sliders
+
+# Update page
+update:
+    title: Edit Slider
+    redirect: individuart/materialize/sliders
+    redirectClose: individuart/materialize/sliders
+
+# Preview page
+preview:
+    title: Preview Slider

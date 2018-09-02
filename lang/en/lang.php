@@ -36,6 +36,25 @@ return [
         'items_validation' => 'The Items property can contain only numeric symbols',
         'new_carousel' => 'New Carousel',
 
+        //slider
+
+        'default' => 'Default',
+        'full_width' => 'Full Width',
+        'full_screen' => 'Full Screen',
+        'sliders' => 'Sliders',
+        'slider' => 'Slider',
+        'slider_component_description' => 'Add a Slider to Your Page',
+        'items' => 'Items',
+        'items_description' => 'Number of items of slider',
+        'items_validation' => 'The Items property can contain only numeric symbols',
+        'new_slider' => 'New Slider',
+        'label_show_texts' => 'Show texts',
+        'label_show_indicators' => 'Show indicators',
+        'label_text_align' => 'Texts align',
+        'left' => 'left',
+        'center' => 'center',
+        'right' => 'right',
+
         //parallax
         'parallax_component_description' => 'Add a Parallax to Your Page',
 
@@ -68,6 +87,8 @@ return [
 
         'title_color' => 'title color',
         'title_color_variant' => 'title color variant',
+        'subtitle_color' => 'subtitle color',
+        'subtitle_color_variant' => 'subtitle color variant',
         'content_color' => 'content color',
         'content_color_variant' => 'content color variant',
         'background_color' => 'background color',

@@ -1,0 +1,21 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    name:
+      label: individuart.materialize::lang.backend.label_name
+      searchable: true
+    image:
+      label: individuart.materialize::lang.backend.label_image
+      sortable: no
+      type: partial
+      path: ~/plugins/individuart/materialize/models/slideritem/partials/_image_column.htm
+    sort_order:
+      label: individuart.materialize::lang.backend.label_order
+    published:
+      label: individuart.materialize::lang.backend.label_published
+      type: switch

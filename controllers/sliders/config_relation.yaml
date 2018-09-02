@@ -1,0 +1,13 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+slider_items:
+    label: individuart.materialize::lang.backend.label_images
+    view:
+        list: $/individuart/materialize/models/slideritem/columns.yaml
+        toolbarButtons: create|delete
+    manage:
+        form: $/individuart/materialize/models/slideritem/fields.yaml
+        list: $/individuart/materialize/models/slideritem/columns.yaml
+        recordsPerPage: 10
