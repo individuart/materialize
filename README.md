@@ -28,6 +28,7 @@ Here you can read documentation about the Materialize components:
 * [Collapsibles](http://materializecss.com/collapsible.html)
 * [Parallax](http://materializecss.com/parallax.html)
 * [Cards](http://materializecss.com/cards.html)
+* [Sliders](http://materializecss.com/media.html)
 
 
 * 5 Components available (Carousel, Collapsible, Parallax, Card and Slider).
