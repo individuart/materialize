@@ -1,12 +1,14 @@
-<?php namespace Individuart\Materialize\Controllers;
+<?php
 
-use BackendMenu;
+namespace Individuart\Materialize\Controllers;
+
 use Backend\Classes\Controller;
+use BackendMenu;
 use Individuart\Materialize\Models\Collapsible as CollapsibleClass;
 use October\Rain\Support\Facades\Flash;
 
 /**
- * Collapsibles Back-end Controller
+ * Collapsibles Back-end Controller.
  */
 class Collapsibles extends Controller
 {
@@ -14,7 +16,7 @@ class Collapsibles extends Controller
         'Backend.Behaviors.FormController',
         'Backend.Behaviors.ListController',
         'Backend.Behaviors.RelationController',
-        'Backend.Behaviors.ReorderController'
+        'Backend.Behaviors.ReorderController',
     ];
 
     public $formConfig = 'config_form.yaml';
@@ -25,22 +27,20 @@ class Collapsibles extends Controller
     public function __construct()
     {
         parent::__construct();
-
         BackendMenu::setContext('Individuart.Materialize', 'materialize', 'collapsibles');
     }
 
     public function index_onDelete()
     {
         if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
-
             foreach ($checkedIds as $collapId) {
-                if (!$coll = CollapsibleClass::find($collapId))
+                if (!$coll = CollapsibleClass::find($collapId)) {
                     continue;
-                if($coll->collapsible_items) {
-                    foreach($coll->collapsible_items as $collap_item){
+                }
+                if ($coll->collapsible_items) {
+                    foreach ($coll->collapsible_items as $collap_item) {
                         $collap_item->delete();
                     }
-
                 }
                 $coll->delete();
             }
@@ -50,5 +50,4 @@ class Collapsibles extends Controller
 
         return $this->listRefresh();
     }
-
 }

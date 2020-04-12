@@ -1,7 +1,9 @@
-<?php namespace Individuart\Materialize\Updates;
+<?php
 
-use Schema;
+namespace Individuart\Materialize\Updates;
+
 use October\Rain\Database\Updates\Migration;
+use Schema;
 
 class CreateSliderItemsTable extends Migration
 {

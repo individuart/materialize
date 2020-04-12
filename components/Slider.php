@@ -1,19 +1,19 @@
-<?php namespace Individuart\Materialize\Components;
+<?php
+
+namespace Individuart\Materialize\Components;
 
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Lang;
-use Illuminate\Support\Facades\Response;
 use Individuart\Materialize\Models\Color;
 use Individuart\Materialize\Models\Slider as SliderClass;
 
 class Slider extends ComponentBase
 {
-
     public function componentDetails()
     {
         return [
             'name' => Lang::get('individuart.materialize::lang.backend.slider'),
-            'description' => Lang::get('individuart.materialize::lang.backend.slider_component_description')
+            'description' => Lang::get('individuart.materialize::lang.backend.slider_component_description'),
         ];
     }
 
@@ -28,17 +28,17 @@ class Slider extends ComponentBase
             'showtexts' => [
                 'title' => Lang::get('individuart.materialize::lang.backend.label_show_texts'),
                 'type' => 'dropdown',
-                'default' => 'no'
+                'default' => 'no',
             ],
             'showindicators' => [
                 'title' => Lang::get('individuart.materialize::lang.backend.label_show_indicators'),
                 'type' => 'dropdown',
-                'default' => 'no'
+                'default' => 'no',
             ],
             'textalign' => [
                 'title' => Lang::get('individuart.materialize::lang.backend.label_text_align'),
                 'type' => 'dropdown',
-                'default' => 'center'
+                'default' => 'center',
             ],
             'titlefontcolor' => [
                 'title' => Lang::get('individuart.materialize::lang.backend.title_color'),
@@ -48,7 +48,7 @@ class Slider extends ComponentBase
             'titlefontcolorvar' => [
                 'title' => Lang::get('individuart.materialize::lang.backend.title_color_variant'),
                 'type' => 'dropdown',
-                'default' => ''
+                'default' => '',
             ],
             'subtitlefontcolor' => [
                 'title' => Lang::get('individuart.materialize::lang.backend.subtitle_color'),
@@ -58,41 +58,39 @@ class Slider extends ComponentBase
             'subtitlefontcolorvar' => [
                 'title' => Lang::get('individuart.materialize::lang.backend.subtitle_color_variant'),
                 'type' => 'dropdown',
-                'default' => ''
+                'default' => '',
             ],
             'height' => [
                 'title' => Lang::get('individuart.materialize::lang.backend.height'),
                 'default' => 450,
-                'type'              => 'string',
+                'type' => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => Lang::get('individuart.materialize::lang.backend.only_numeric')
-            ]
-
+                'validationMessage' => Lang::get('individuart.materialize::lang.backend.only_numeric'),
+            ],
 
         ];
     }
 
-
     public function getSliderOptions()
     {
         $sliders = SliderClass::published()->orderBy('sort_order', 'asc')->get();
-        $arr_sliders = array();
+        $arr_sliders = [];
         if ($sliders) {
             foreach ($sliders as $slider) {
                 $arr_sliders[$slider->id] = $slider->name;
             }
+
             return $arr_sliders;
-        } else {
-            return [];
         }
 
+        return [];
     }
 
     public function getShowtextsOptions()
     {
         return [
             false => Lang::get('individuart.materialize::lang.backend.label_no'),
-            true => Lang::get('individuart.materialize::lang.backend.label_yes')
+            true => Lang::get('individuart.materialize::lang.backend.label_yes'),
         ];
     }
 
@@ -101,7 +99,7 @@ class Slider extends ComponentBase
         return [
             'left-align' => Lang::get('individuart.materialize::lang.backend.left'),
             'center-align' => Lang::get('individuart.materialize::lang.backend.center'),
-            'right-align' => Lang::get('individuart.materialize::lang.backend.right')
+            'right-align' => Lang::get('individuart.materialize::lang.backend.right'),
         ];
     }
 
@@ -109,10 +107,9 @@ class Slider extends ComponentBase
     {
         return [
             false => Lang::get('individuart.materialize::lang.backend.label_no'),
-            true => Lang::get('individuart.materialize::lang.backend.label_yes')
+            true => Lang::get('individuart.materialize::lang.backend.label_yes'),
         ];
     }
-
 
     public function getTitlefontcolorOptions()
     {
@@ -133,7 +130,6 @@ class Slider extends ComponentBase
     {
         return Color::getColorVariants();
     }
-
 
     public function onRun()
     {
@@ -183,8 +179,7 @@ class Slider extends ComponentBase
     public function slider_items()
     {
         $slider_id = $this->property('slider');
-        $slider_items = SliderClass::find($slider_id)->slider_items;
-        return $slider_items;
-    }
 
+        return SliderClass::find($slider_id)->slider_items;
+    }
 }

@@ -1,19 +1,20 @@
-<?php namespace Individuart\Materialize\Components;
+<?php
+
+namespace Individuart\Materialize\Components;
 
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Lang;
-use Individuart\Materialize\Models\Card as CardClass;
 use Illuminate\Support\Facades\Request;
+use Individuart\Materialize\Models\Card as CardClass;
 use Individuart\Materialize\Models\Color;
 
 class Card extends ComponentBase
 {
-
     public function componentDetails()
     {
         return [
-            'name'        => Lang::get('individuart.materialize::lang.backend.card'),
-            'description' => Lang::get('individuart.materialize::lang.backend.card_component_description')
+            'name' => Lang::get('individuart.materialize::lang.backend.card'),
+            'description' => Lang::get('individuart.materialize::lang.backend.card_component_description'),
         ];
     }
 
@@ -21,80 +22,78 @@ class Card extends ComponentBase
     {
         return [
             'card' => [
-                'title'             => Lang::get('individuart.materialize::lang.backend.card'),
-                'type'              => 'dropdown',
-                'placeholder'       => ''
+                'title' => Lang::get('individuart.materialize::lang.backend.card'),
+                'type' => 'dropdown',
+                'placeholder' => '',
             ],
             'type' => [
-                'title'             => Lang::get('individuart.materialize::lang.backend.label_type'),
-                'default'           => 'default',
-                'type'              => 'dropdown',
-                'placeholder'       => ''
+                'title' => Lang::get('individuart.materialize::lang.backend.label_type'),
+                'default' => 'default',
+                'type' => 'dropdown',
+                'placeholder' => '',
             ],
             'stickyaction' => [
-                'title'             => Lang::get('individuart.materialize::lang.backend.label_sticky_action'),
-                'depends'           => ['type'],
-                'type'              => 'dropdown'
+                'title' => Lang::get('individuart.materialize::lang.backend.label_sticky_action'),
+                'depends' => ['type'],
+                'type' => 'dropdown',
             ],
             'size' => [
-                'title'             => Lang::get('individuart.materialize::lang.backend.label_size'),
-                'default'           => '',
-                'type'              => 'dropdown'
+                'title' => Lang::get('individuart.materialize::lang.backend.label_size'),
+                'default' => '',
+                'type' => 'dropdown',
             ],
             'showimage' => [
-                'title'             => Lang::get('individuart.materialize::lang.backend.label_show_image'),
-                'type'              => 'dropdown',
-                'default'           =>'no'
+                'title' => Lang::get('individuart.materialize::lang.backend.label_show_image'),
+                'type' => 'dropdown',
+                'default' => 'no',
             ],
             'titlefontcolor' => [
-                'title'             => Lang::get('individuart.materialize::lang.backend.title_color'),
-                'type'              => 'dropdown',
-                'default'           => '',
+                'title' => Lang::get('individuart.materialize::lang.backend.title_color'),
+                'type' => 'dropdown',
+                'default' => '',
             ],
             'titlefontcolorvar' => [
-                'title'             => Lang::get('individuart.materialize::lang.backend.title_color_variant'),
-                'type'              => 'dropdown',
-                'default'       => ''
+                'title' => Lang::get('individuart.materialize::lang.backend.title_color_variant'),
+                'type' => 'dropdown',
+                'default' => '',
             ],
             'contentfontcolor' => [
-                'title'             => Lang::get('individuart.materialize::lang.backend.content_color'),
-                'type'              => 'dropdown',
-                'default'           => '',
+                'title' => Lang::get('individuart.materialize::lang.backend.content_color'),
+                'type' => 'dropdown',
+                'default' => '',
             ],
             'contentfontcolorvar' => [
-                'title'             => Lang::get('individuart.materialize::lang.backend.content_color_variant'),
-                'type'              => 'dropdown',
-                'default'       => ''
+                'title' => Lang::get('individuart.materialize::lang.backend.content_color_variant'),
+                'type' => 'dropdown',
+                'default' => '',
             ],
             'cardbgcolor' => [
-                'title'             => Lang::get('individuart.materialize::lang.backend.background_color'),
-                'type'              => 'dropdown',
-                'default'           => '',
+                'title' => Lang::get('individuart.materialize::lang.backend.background_color'),
+                'type' => 'dropdown',
+                'default' => '',
             ],
             'cardbgcolorvar' => [
-                'title'             => Lang::get('individuart.materialize::lang.backend.background_color_variant'),
-                'type'              => 'dropdown',
-                'default'       => ''
-            ]
+                'title' => Lang::get('individuart.materialize::lang.backend.background_color_variant'),
+                'type' => 'dropdown',
+                'default' => '',
+            ],
 
         ];
     }
 
     public function getCardOptions()
     {
-        $cards = CardClass::published()->orderBy('name','asc')->get();
-        $arr_cards = array();
-        if($cards)
-        {
-            foreach($cards as $card)
-            {
+        $cards = CardClass::published()->orderBy('name', 'asc')->get();
+        $arr_cards = [];
+        if ($cards) {
+            foreach ($cards as $card) {
                 $arr_cards[$card->id] = $card->name;
             }
+
             return $arr_cards;
-        }else{
-            return [];
         }
 
+        return [];
     }
 
     public function getTypeOptions()
@@ -103,7 +102,7 @@ class Card extends ComponentBase
             'default' => Lang::get('individuart.materialize::lang.backend.default_card'),
             'horizontal' => Lang::get('individuart.materialize::lang.backend.horizontal_card'),
             'reveal' => Lang::get('individuart.materialize::lang.backend.reveal_card'),
-            'panel' => Lang::get('individuart.materialize::lang.backend.card_panel')
+            'panel' => Lang::get('individuart.materialize::lang.backend.card_panel'),
         ];
     }
 
@@ -114,11 +113,10 @@ class Card extends ComponentBase
             'default' => [],
             'horizontal' => [],
             'reveal' => ['no' => 'no', 'yes' => 'yes'],
-            'panel' => []
+            'panel' => [],
         ];
 
         return $stickyaction[$cardtype];
-
     }
 
     public function getSizeOptions()
@@ -127,7 +125,7 @@ class Card extends ComponentBase
             '' => Lang::get('individuart.materialize::lang.backend.label_default'),
             'small' => Lang::get('individuart.materialize::lang.backend.label_small'),
             'medium' => Lang::get('individuart.materialize::lang.backend.label_medium'),
-            'large' => Lang::get('individuart.materialize::lang.backend.label_large')
+            'large' => Lang::get('individuart.materialize::lang.backend.label_large'),
         ];
     }
 
@@ -135,7 +133,7 @@ class Card extends ComponentBase
     {
         return [
             'no' => Lang::get('individuart.materialize::lang.backend.label_no'),
-            'yes' => Lang::get('individuart.materialize::lang.backend.label_yes')
+            'yes' => Lang::get('individuart.materialize::lang.backend.label_yes'),
         ];
     }
 
@@ -143,22 +141,27 @@ class Card extends ComponentBase
     {
         return Color::getColors();
     }
+
     public function getTitlefontcolorvarOptions()
     {
         return Color::getColorVariants();
     }
+
     public function getContentfontcolorOptions()
     {
         return Color::getColors();
     }
+
     public function getContentfontcolorvarOptions()
     {
         return Color::getColorVariants();
     }
+
     public function getCardbgcolorOptions()
     {
         return Color::getColors();
     }
+
     public function getCardbgcolorvarOptions()
     {
         return Color::getColorVariants();
@@ -167,47 +170,62 @@ class Card extends ComponentBase
     public function onRun()
     {
         $this->addJs('components/collapsible/assets/js/default.js');
-
     }
 
-    public function card(){
+    public function card()
+    {
         $card_id = $this->property('card');
-        $card = CardClass::find($card_id);
-        return $card;
+
+        return CardClass::find($card_id);
     }
-    public function stickyaction(){
+
+    public function stickyaction()
+    {
         return $this->property('stickyaction');
     }
-    public function size(){
+
+    public function size()
+    {
         return $this->property('size');
     }
-    public function type(){
+
+    public function type()
+    {
         return $this->property('type');
     }
-    public function showimage(){
+
+    public function showimage()
+    {
         return $this->property('showimage');
     }
 
-    public function titlefontcolor(){
+    public function titlefontcolor()
+    {
         return $this->property('titlefontcolor');
     }
-    public function titlefontcolorvar(){
+
+    public function titlefontcolorvar()
+    {
         return $this->property('titlefontcolorvar');
     }
-    public function contentfontcolor(){
+
+    public function contentfontcolor()
+    {
         return $this->property('contentfontcolor');
     }
-    public function contentfontcolorvar(){
+
+    public function contentfontcolorvar()
+    {
         return $this->property('contentfontcolorvar');
     }
-    public function cardbgcolor(){
+
+    public function cardbgcolor()
+    {
         return $this->property('cardbgcolor');
     }
-    public function cardbgcolorvar(){
+
+    public function cardbgcolorvar()
+    {
         return $this->property('cardbgcolorvar');
     }
-
-
-
-
 }

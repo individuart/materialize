@@ -2,7 +2,7 @@
 
 return [
     'plugin' => [
-        'description' => 'Plugin for creating HTML modules in Materialize CSS based themes'
+        'description' => 'Plugin for creating HTML modules in Materialize CSS based themes',
     ],
     'backend' => [
         'label_published' => 'Published',
@@ -84,7 +84,6 @@ return [
         'label_yes' => 'Yes',
         'label_default' => 'Default',
 
-
         'title_color' => 'title color',
         'title_color_variant' => 'title color variant',
         'subtitle_color' => 'subtitle color',
@@ -106,7 +105,6 @@ return [
         'reorder' => 'Reorder',
         'back' => 'Back',
 
-
         'successfully_deleted' => 'Records successfully deleted',
         'delete_confirm' => 'Really delete selected records?',
         'delete_selected' => 'Delete selected',
@@ -115,6 +113,6 @@ return [
         'return_to_list' => 'Back to list',
         'saving' => 'Saving...',
         'deleting' => 'Deleting',
-        'delete_confirm_record' => 'Do you really want to delete this record?'
-    ]
+        'delete_confirm_record' => 'Do you really want to delete this record?',
+    ],
 ];

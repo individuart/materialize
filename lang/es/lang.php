@@ -2,7 +2,7 @@
 
 return [
     'plugin' => [
-        'description' => 'PLugin para crear módulos HTML basados en Materialize CSS'
+        'description' => 'PLugin para crear módulos HTML basados en Materialize CSS',
     ],
     'backend' => [
         'label_published' => 'Publicado',
@@ -84,7 +84,6 @@ return [
         'label_yes' => 'Si',
         'label_default' => 'Por defecto',
 
-
         'title_color' => 'Color título',
         'title_color_variant' => 'Variante color título',
         'subtitle_color' => 'Color subtítulo',
@@ -106,7 +105,6 @@ return [
         'reorder' => 'Reordenar',
         'back' => 'Volver',
 
-
         'successfully_deleted' => 'Registros borrados correctamente',
         'delete_confirm' => 'Deseas borrar los registros seleccionados?',
         'delete_selected' => 'Borrar seleccionados',
@@ -115,6 +113,6 @@ return [
         'return_to_list' => 'Volver al listado',
         'saving' => 'Guardando...',
         'deleting' => 'Borrando',
-        'delete_confirm_record' => '¿Quieres borrar este registro?'
-    ]
+        'delete_confirm_record' => '¿Quieres borrar este registro?',
+    ],
 ];

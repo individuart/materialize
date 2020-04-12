@@ -1,16 +1,18 @@
-<?php namespace Individuart\Materialize\Controllers;
+<?php
 
-use BackendMenu;
+namespace Individuart\Materialize\Controllers;
+
 use Backend\Classes\Controller;
+use BackendMenu;
 
 /**
- * Cards Back-end Controller
+ * Cards Back-end Controller.
  */
 class Cards extends Controller
 {
     public $implement = [
         'Backend.Behaviors.FormController',
-        'Backend.Behaviors.ListController'
+        'Backend.Behaviors.ListController',
     ];
 
     public $formConfig = 'config_form.yaml';

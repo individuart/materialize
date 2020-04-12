@@ -1,29 +1,20 @@
-<?php namespace Individuart\Materialize\Models;
+<?php
+
+namespace Individuart\Materialize\Models;
 
 use Model;
 
 /**
- * Card Model
+ * Card Model.
  */
 class Card extends Model
 {
-
     use \October\Rain\Database\Traits\Validation;
 
     /**
-     * @var string The database table used by the model.
+     * @var string the database table used by the model
      */
     public $table = 'individuart_materialize_cards';
-
-    /**
-     * @var array Guarded fields
-     */
-    protected $guarded = ['*'];
-
-    /**
-     * @var array Fillable fields
-     */
-    protected $fillable = [];
 
     /**
      * @var array Relations
@@ -36,13 +27,13 @@ class Card extends Model
     public $morphOne = [];
     public $morphMany = [];
     public $attachOne = [
-        'card_image' => ['System\Models\File']
+        'card_image' => ['System\Models\File'],
     ];
     public $attachMany = [];
 
     public $rules = [
         'name' => 'required',
-        'title' => 'required'
+        'title' => 'required',
     ];
 
     /**
@@ -50,25 +41,32 @@ class Card extends Model
      */
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
     /**
-     * @var array Attributes that support translation, if available.
+     * @var array attributes that support translation, if available
      */
-    public $translatable = ['title','description','link_text'];
+    public $translatable = ['title', 'description', 'link_text'];
 
-    public function getImageAttribute(){
+    /**
+     * @var array Guarded fields
+     */
+    protected $guarded = ['*'];
+
+    /**
+     * @var array Fillable fields
+     */
+    protected $fillable = [];
+
+    public function getImageAttribute()
+    {
         $item = Card::find($this->id);
-        if($item->card_image)
-        {
-            return '<img src="' . $item->card_image->getThumb(50, 50, 'crop') . '">';
-        }else
-        {
-            return '';
+        if ($item->card_image) {
+            return '<img src="'.$item->card_image->getThumb(50, 50, 'crop').'">';
         }
+
+        return '';
     }
 
     public function scopePublished($query)
     {
-        return $query->where('published',true);
-
+        return $query->where('published', true);
     }
-
 }

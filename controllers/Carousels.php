@@ -1,12 +1,14 @@
-<?php namespace Individuart\Materialize\Controllers;
+<?php
 
-use BackendMenu;
+namespace Individuart\Materialize\Controllers;
+
 use Backend\Classes\Controller;
+use BackendMenu;
 use Individuart\Materialize\Models\Carousel as CarouselClass;
 use October\Rain\Support\Facades\Flash;
 
 /**
- * Carousels Back-end Controller
+ * Carousels Back-end Controller.
  */
 class Carousels extends Controller
 {
@@ -14,7 +16,7 @@ class Carousels extends Controller
         'Backend.Behaviors.FormController',
         'Backend.Behaviors.ListController',
         'Backend.Behaviors.RelationController',
-        'Backend.Behaviors.ReorderController'
+        'Backend.Behaviors.ReorderController',
     ];
 
     public $formConfig = 'config_form.yaml';
@@ -32,15 +34,14 @@ class Carousels extends Controller
     public function index_onDelete()
     {
         if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
-
             foreach ($checkedIds as $carouselId) {
-                if (!$car = CarouselClass::find($carouselId))
+                if (!$car = CarouselClass::find($carouselId)) {
                     continue;
-                if($car->carousel_items) {
-                    foreach($car->carousel_items as $car_item){
+                }
+                if ($car->carousel_items) {
+                    foreach ($car->carousel_items as $car_item) {
                         $car_item->delete();
                     }
-
                 }
                 $car->delete();
             }

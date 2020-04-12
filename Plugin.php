@@ -1,14 +1,15 @@
-<?php namespace Individuart\Materialize;
+<?php
+
+namespace Individuart\Materialize;
 
 use Backend;
 use System\Classes\PluginBase;
 
 /**
- * Materialize Plugin Information File
+ * Materialize Plugin Information File.
  */
 class Plugin extends PluginBase
 {
-
     /**
      * Returns information about this plugin.
      *
@@ -17,21 +18,18 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Materialize',
+            'name' => 'Materialize',
             'description' => 'individuart.materialize::lang.plugin.description',
-            'author'      => 'Individuart',
-            'icon'        => 'icon-th-large'
+            'author' => 'Individuart',
+            'icon' => 'icon-th-large',
         ];
     }
 
     /**
      * Register method, called when the plugin is first registered.
-     *
-     * @return void
      */
     public function register()
     {
-
     }
 
     /**
@@ -41,7 +39,6 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-
     }
 
     /**
@@ -51,7 +48,6 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-
         return [
             'Individuart\Materialize\Components\Carousel' => 'Carousel',
             'Individuart\Materialize\Components\Parallax' => 'Parallax',
@@ -68,11 +64,10 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-
         return [
             'individuart.materialize.some_permission' => [
                 'tab' => 'Materialize',
-                'label' => 'Some permission'
+                'label' => 'Some permission',
             ],
         ];
     }
@@ -88,11 +83,11 @@ class Plugin extends PluginBase
 
         return [
             'materialize' => [
-                'label'       => 'Materialize',
-                'url'         => Backend::url('individuart/materialize/carousels'),
-                'icon'        => 'icon-columns',
+                'label' => 'Materialize',
+                'url' => Backend::url('individuart/materialize/carousels'),
+                'icon' => 'icon-columns',
                 'permissions' => ['individuart.materialize.*'],
-                'order'       => 500,
+                'order' => 500,
                 'sideMenu' => [
                     'carousels' => [
                         'label' => 'individuart.materialize::lang.backend.carousels',
@@ -114,14 +109,13 @@ class Plugin extends PluginBase
                         'icon' => 'icon-exchange',
                         'url' => Backend::url('individuart/materialize/sliders'),
                     ],
-                ]
-            ]
+                ],
+            ],
         ];
     }
 
-
     /**
-     * Register components as snippets for RainLab Pages Plugin
+     * Register components as snippets for RainLab Pages Plugin.
      */
     public function registerPageSnippets()
     {
@@ -133,5 +127,4 @@ class Plugin extends PluginBase
             'Individuart\Materialize\Components\Slider' => 'slider',
         ];
     }
-
 }
