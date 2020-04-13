@@ -36,6 +36,7 @@ class SliderItem extends Model
 
     public $rules = [
         'name' => 'required',
+        'sort_order' => 'required',
     ];
 
     /**

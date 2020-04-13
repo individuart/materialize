@@ -18,6 +18,7 @@ fields:
       searchable: true
     sort_order:
       label: individuart.materialize::lang.backend.label_order
+      required: true
     link:
       label: individuart.materialize::lang.backend.label_link
     published:

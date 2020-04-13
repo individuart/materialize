@@ -19,6 +19,7 @@ fields:
       type: richeditor
     sort_order:
       label: individuart.materialize::lang.backend.label_order
+      required: true
     published:
       label: individuart.materialize::lang.backend.label_published
       type: switch
