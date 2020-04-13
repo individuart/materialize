@@ -10,3 +10,6 @@
     - 'Add slider component'
     - create_sliders_table.php
     - create_slider_items_table.php
+1.1.1:
+    - 'Update sortable fields to nullable'
+    - update_sortable_fields_to_nullable.php
